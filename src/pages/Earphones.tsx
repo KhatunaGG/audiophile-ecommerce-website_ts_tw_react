@@ -12,7 +12,7 @@ import { IData } from "../interfaces";
 const Earphones = () => {
   const context = useContext(GlobalState);
   if (!context) return null;
-  const { screenWidth, data } = context;
+  const { data } = context;
 
   const earphonesData = data.filter((item) => item.category === 'earphones')
 

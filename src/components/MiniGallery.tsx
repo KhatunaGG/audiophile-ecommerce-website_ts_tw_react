@@ -5,7 +5,7 @@ import { GlobalState } from "../App";
 const MiniGalery = () => {
     const context = useContext(GlobalState);
     if (!context) return null;
-    const { screenWidth, setSidebar  } = context;
+    const { setSidebar  } = context;
 
 
 
