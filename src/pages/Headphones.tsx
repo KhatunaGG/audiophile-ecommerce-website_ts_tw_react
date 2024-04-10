@@ -11,7 +11,7 @@ const Headphones = () => {
 
   const context = useContext(GlobalState);
   if (!context) return null;
-  const { screenWidth, data } = context;
+  const { data } = context;
 
   const headphonesData = data.filter((item) => item.category === 'headphones')
   
@@ -30,7 +30,7 @@ const Headphones = () => {
             key={item.id} 
             filtredData={item}
             status='XX99 Mark I Headphones'
-           
+
             />
            
           ))}
