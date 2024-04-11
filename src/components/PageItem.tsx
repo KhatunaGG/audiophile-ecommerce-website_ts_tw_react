@@ -1,6 +1,6 @@
 
 import { PageItemPropsType } from "../interfaces";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalState } from "../App";
 
@@ -9,7 +9,7 @@ import { GlobalState } from "../App";
 // type PageItemPropsType = {
 //     filtredData: IData;
 //     status?: string;
-  
+
 // }
 
 
@@ -18,15 +18,19 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
     const context = useContext(GlobalState);
     if (!context) return null;
     const { screenWidth } = context;
-
-
     
+    console.log(filtredData.category, '>>>filtreddata')
+  
+
+
 
     const navigate = useNavigate()
 
     const getNavigateData = () => {
         return navigate(
-            '/headphones/productdetail',
+            // '/headphones/productdetail',
+            `/${filtredData.category}/productdetail`,
+            // '/headphones/productdetail',
             {
                 state: [
                     filtredData
@@ -34,11 +38,6 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
             }
         )
     }
-
-
-    const params = useParams()
-
-    console.log(params, '>>>params')
 
 
 
@@ -69,27 +68,12 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
                             {filtredData.name}</h1>
 
                         <p className='font-normal text-[15px] leading-[1.66] text-[#918b8b] mb-[28px] md:px-[58px] lg:px-0'>{filtredData.description}</p>
-
-                        {/* <Link to={`/${singlProduct.category}/productdetail`}>
-                                <Button routeToPage={routeToPage} category={singlProduct.category} producteName={singlProduct.name} />
-                            </Link> */}
-
-                        {/* <Link to={`/${filtredData.category}/productdetail`}>
-                            <Button filtredData={filtredData} filtredName={filtredData.name }  />
-                            </Link> */}
-
                         <div
-                       
-                       onClick={getNavigateData}
-
+                            onClick={getNavigateData}
                         >
                             <button className='uppercase font-bold text-[13px] leading-[1.17] tracking-[1px] py-[15px] px-[30px]
                              bg-[#D87D4A] hover:bg-[#fbaf85]'>See Product</button>
                         </div>
-
-
-                        {/* <Button  /> */}
-
 
                     </div>
                 </div>

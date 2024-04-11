@@ -11,32 +11,6 @@ import { CartItemType, GlobalStateType, IData } from './interfaces';
 import ProductDetail from './pages/ProductDetail';
 
 
-// export type CartItemType = {
-//   id: number;
-//   price: number;
-//   img: string;
-//   quantity: number;
-//   totalPrice: number;
-//   cartItemName: string;
-// }
-
-// type GlobalStateType = {
-//   screenWidth: number;
-//   category: string[];
-//   sidebar: boolean;
-//   setCart: React.Dispatch<React.SetStateAction<boolean>>;
-//   cart: boolean;
-//   toggleSidebar: () => void;
-//   data: IData[];
-//   setSidebar: (value: React.SetStateAction<boolean>) => void;
-//   setCartItems: (volue: CartItemType[]) => void;
-//   // setCartItems:  React.Dispatch<React.SetStateAction<IData[] | CartItemProps[]>>
-//   cartItems: CartItemType[];
-//   // increase: (value: CartItemType) => void;
-// }
-
-
-
 export const GlobalState = createContext<GlobalStateType | null>(null);
 
 
@@ -54,12 +28,10 @@ function App() {
 
 
   let category: string[] = [];
-
   data.forEach((item) => {
     if (!category.includes(item.category)) {
       category.push(item.category);
     }
-
   });
 
 
@@ -80,6 +52,7 @@ function App() {
   }, []);
 
 
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Root />}>
@@ -90,12 +63,10 @@ function App() {
           <Route path='/headphones/productdetail' element={<ProductDetail />} />
         </Route>
 
-
         <Route path='speakers'>
           <Route index element={<Seakers />} />
           <Route path='/speakers/:productdetail' element={<ProductDetail />} />
         </Route>
-
 
         <Route path='earphones' >
           <Route index element={<Earphones />} />
@@ -104,7 +75,6 @@ function App() {
       </Route>
     )
   );
-
 
 
   return (

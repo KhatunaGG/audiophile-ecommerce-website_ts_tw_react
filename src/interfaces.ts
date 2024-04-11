@@ -1,5 +1,4 @@
 
-
 export interface IData {
     id: number;
     slug: string;
@@ -88,8 +87,6 @@ export interface IData {
             }
         }
     ],
-
-
 }
 
 export type ItemPropsType = {
@@ -114,9 +111,7 @@ export type GlobalStateType = {
     data: IData[];
     setSidebar: (value: React.SetStateAction<boolean>) => void;
     setCartItems: (volue: CartItemType[]) => void;
-    // setCartItems:  React.Dispatch<React.SetStateAction<IData[] | CartItemProps[]>>
     cartItems: CartItemType[];
-    // increase: (value: CartItemType) => void;
 }
 
 
@@ -127,4 +122,26 @@ export type CartItemType = {
     quantity: number;
     totalPrice: number;
     cartItemName: string;
+}
+
+
+export type LikeGalleryPropsType = {
+    others: {
+        slug: string;
+        name: string;
+        image: {
+            mobile: string;
+            tablet: string;
+            desktop: string;
+        }
+    }[];
+}
+
+
+export type FeaturesSectionPropsType = {
+    features: string;
+    includes: {
+        quantity: number;
+        item: string;
+    }[];
 }

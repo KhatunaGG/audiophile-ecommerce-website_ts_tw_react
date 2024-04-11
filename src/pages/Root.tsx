@@ -7,40 +7,12 @@ import { useContext } from 'react';
 
 
 
-
-// type RootPropsType = {
-//     data: IData[];
-//     category: string[];
-//     handleCategoryName: (value: string) => void;
-//     categoryItem: string;
-//     screenWidth: number;
-//     sidebar: boolean;
-//     toggleSidebar: () => void;
-//     activeProductPage: string;
-//     setSidebar: (value: boolean) => void;
-//     setCart: React.Dispatch<React.SetStateAction<boolean>>
-//     cart: boolean;
-//     cartItems: ICartItems[];
-
-//     minusCount: (value: number) => void;
-//     plusCount: (value: number) => void;
-//     count: number;
-
-// }
-
-
-
-
-
-
 const Root = () => {
 
     const context = useContext(GlobalState);
     if (!context) return null;
     const { screenWidth, category, sidebar, setCart, cart, toggleSidebar } = context;
 
-
-  
 
     return (
         <main className='w-full flex flex-col items-center text-white relative  '>
@@ -50,7 +22,6 @@ const Root = () => {
                     <div className='w-full md:border-b md:border-[#302f2f] flex flex-row items-center justify-between  lg:justify-between py-8 '>
                         <div className='flex w-[73.61%] items-center justify-between md:justify-start  md:gap-[42px] lg:w-[143px] lg:h-[25px]'>
                             <div
-
                                 onClick={() => toggleSidebar()}
                                 className='logo-box  lg:hidden '>
                                 <img className=' lg:hidden' src="/assets/shared/tablet/icon-hamburger.svg" alt="" />
@@ -65,7 +36,6 @@ const Root = () => {
                                         fill="#FFF" fill-rule="nonzero" />
                                 </svg>
                             </Link>
-
                         </div>
                         <ul className="nav list-none hidden lg:flex flex-row gap-[34px] cursor-pointer items-center justify-center uppercase text-[13px] tracking-[2px] leading-[1.93] font-bold">
                             <Link to={'/'}>
@@ -98,21 +68,14 @@ const Root = () => {
                 {screenWidth < 1110 && sidebar && (
                     <Overlay />
                 )}
-
                 {cart && (
                     <Cart />
                 )}
-
-
-
-
             </div>
 
             {/* <section className='px-[6.44%] md:px-[5.20%] lg:px-[11.45%]'> */}
             <Outlet />
             {/* </section> */}
-
-
             <Footer />
         </main>
     )
