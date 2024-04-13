@@ -145,3 +145,31 @@ export type FeaturesSectionPropsType = {
         item: string;
     }[];
 }
+
+
+export type CheckoutDataType = {
+    address: string;
+    checkMony: NonNullable<boolean | undefined>;
+    checkDelivery: NonNullable<boolean | undefined>;
+    city: string;
+    country: string
+    pin: string;
+    num: string;
+    email: string;
+    name: string;
+    phone: string;
+    zip: string;
+
+}
+
+
+export type ThanksSectionPropsType = {
+    summeryCartItem: CartItemType[];
+}
+
+
+export type SummaryCartPropsType = {
+    summeryCartItem: CartItemType[];
+    noErrors: boolean;
+    isChecked: boolean;
+} 

@@ -5,13 +5,8 @@ const Footer = () => {
         <div className='bg-[black] w-full  flex flex-col items-center justify-start text-white pb-[38px] md:pb-[46px] lg:pb-[48px]'>
             <div className="container px-[6.44%] md:px-[5.20%] lg:px-[11.45%] flex flex-col items-center md:items-start">
                 <div className="w-[101px] h-1 bg-[#D87D4A]  mb-[48px] md:mb-[56px] flex "></div>
-
-
-
                 <div className="flex flex-col items-center gap-[48px]  md:items-start md:gap-8 lg:w-full">
-
                     <div className="w-full flex flex-col items-center justify-center gap-[48px]  md:justify-start lg:flex-row lg:justify-between">
-                        {/* <img className='lg:w-[143px] lg:h-[25px] flex md:self-start ' src="/assets/shared/desktop/logo.svg" alt="" /> */}
                         <svg
                             className="transition duration-300 ease-in-out transform hover:scale-110"
                             width="143" height="25" xmlns="http://www.w3.org/2000/svg">
@@ -28,26 +23,15 @@ const Footer = () => {
                             <li className=' hover:text-[#D87D4A]'>Earphones</li>
                         </ul>
                     </div>
-
-
-
-
                     <div className=" lg:w-[540px] ">
                         <p className="text-[#9b9393] text-[15px] leading-[1.66] font-medium text-center md:text-left ">Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
                     </div>
-
-
-
                     <div className="flex flex-col items-center justify-center w-full gap-[48px] md:flex md:flex-row md:justify-between lg:h-[56px] ">
                         <div className="">
                             <p className="text-[#9b9393] text-[15px] leading-[1.66] font-medium text-center">Copyright 2021. All Rights Reserved</p>
                         </div>
-
-
-
                         <div className="flex flex-row gap-4 lg:mt-[-155px] ">
                             <a href="">
-                                {/* <img  src="/assets/shared/desktop/icon-facebook.svg" alt="" /> */}
                                 <svg
                                     className="transition duration-300 ease-in-out transform hover:scale-110"
                                     width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +42,6 @@ const Footer = () => {
                                 </svg>
                             </a>
                             <a href="">
-                                {/* <img src="/assets/shared/desktop/icon-twitter.svg" alt="" /> */}
                                 <svg
                                     className="transition duration-300 ease-in-out transform hover:scale-110"
                                     width="24" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +52,6 @@ const Footer = () => {
                                 </svg>
                             </a>
                             <a href="">
-                                {/* <img src="/assets/shared/desktop/icon-instagram.svg" alt="" /> */}
                                 <svg
                                     className="transition duration-300 ease-in-out transform hover:scale-110 "
                                     width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -80,30 +62,9 @@ const Footer = () => {
                                 </svg>
                             </a>
                         </div>
-
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-
-
-
             </div>
-
         </div>
     )
 }

@@ -5,10 +5,11 @@ import { LikeGalleryPropsType } from "../interfaces";
 
 
 const LikeGallery = ({ others }: LikeGalleryPropsType) => {
-    console.log(others)
+
     const context = useContext(GlobalState);
     if (!context) return null;
     const { screenWidth } = context;
+   
 
 
     return (

@@ -1,16 +1,8 @@
-
 import { PageItemPropsType } from "../interfaces";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalState } from "../App";
 
-
-
-// type PageItemPropsType = {
-//     filtredData: IData;
-//     status?: string;
-
-// }
 
 
 const PageItem = ({ filtredData, status }: PageItemPropsType) => {
@@ -19,19 +11,13 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
     if (!context) return null;
     const { screenWidth } = context;
     
-    console.log(filtredData.category, '>>>filtreddata')
-  
-
-
 
     const navigate = useNavigate()
 
     const getNavigateData = () => {
         return navigate(
-            // '/headphones/productdetail',
             `/${filtredData.category}/productdetail`,
-            // '/headphones/productdetail',
-            {
+             {
                 state: [
                     filtredData
                 ]
@@ -43,11 +29,8 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
 
     return (
         <>
-
-
-
             <div className="pageItem w-full flex flex-col gap-[52px] lg:flex-row lg:gap-[125px] lg:items-center">
-                <div className={`${status === filtredData.name ? 'order-2' : 'order-1'} image  w-full flex items-center justify-center flex-1 `}>
+                <div className={`${status === filtredData.name ? 'lg:order-2' : 'lg:order-1'} image  w-full flex items-center justify-center flex-1 `}>
                     <img
                         src={screenWidth < 768
                             ? filtredData.categoryImage.mobile.slice(1)
@@ -56,7 +39,7 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
                         }
                         alt="" className="rounded-[8px] " />
                 </div>
-                <div className={`${status === filtredData.name ? 'order-1' : 'order-2'} image  w-full flex items-center justify-center flex-1 `}>
+                <div className={`${status === filtredData.name ? 'lg:order-1' : 'lg:order-2'} image  w-full flex items-center justify-center flex-1 `}>
                     <div className='lg:w-[379px] text-center lg:text-left'>
 
                         <h3 className='font-normal text-[14px] leading-[1.19] tracking-[10px] text-[#D87D4A] mb-4'>
@@ -78,10 +61,6 @@ const PageItem = ({ filtredData, status }: PageItemPropsType) => {
                     </div>
                 </div>
             </div>
-
-
-
-
         </>
     )
 }

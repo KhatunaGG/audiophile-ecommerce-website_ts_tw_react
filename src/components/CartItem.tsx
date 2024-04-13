@@ -10,8 +10,6 @@ const CartItem = ({ cartitem }: ItemPropsType) => {
     const { cartItems, setCartItems } = context;
 
     const [count, setCount] = useState(cartitem.quantity)
-   
-
 
 
     const increaseCount = () => {
@@ -35,30 +33,8 @@ const CartItem = ({ cartitem }: ItemPropsType) => {
             }
             return item
         })
-       
         setCartItems(newCartItem)
     }
-
-
-    // const cartToUpdate = (updatedCount: number) => {
-    //     const newCartItem = cartItems.map((item) => {
-    //         if (item.id === cartitem.id) {
-    //             return {
-    //                 ...item, quantity: updatedCount, totalPrice: updatedCount * cartitem.price
-    //             }
-    //         }
-    //         return item
-    //     })
-
-    //     if(updatedCount < 0) {
-    //         setCartItems(newCartItem.filter((item) => item.quantity = 0 ))
-          
-    //     }
-       
-    //     setCartItems(newCartItem)
-    // }
-
-
 
 
     return (

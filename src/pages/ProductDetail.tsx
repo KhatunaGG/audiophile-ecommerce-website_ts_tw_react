@@ -34,7 +34,7 @@ const ProductDetail = () => {
     <>
       <div className="Headphones w-full bg-[black] text-center text-[28px] uppercase font-bold tracking-[2px] pt-[0] pb-[0] absolute t-0 -z-10 left-0 h-[92px]">
       </div>
-      <div className="w-full px-[6.44%] md:px-[5.20%] lg:px-[11.45%] mx-auto   ">
+      <div className="w-full px-[6.44%] md:px-[5.20%] lg:px-[11.45%] mx-auto">
         <button
           onClick={returnToHome}
           className="mt-4 mb-6 md:mt-[33px] lg:mt-[79px] lg:mb-[56px] text-[black] font-bold hover:text-[#D87D4A]">Go Back</button>
@@ -45,7 +45,7 @@ const ProductDetail = () => {
 
 
               <div
-                className={'image  w-full   flex items-center justify-center flex-1'}>
+                className={'image w-full flex items-center justify-center flex-1'}>
                 <img
                   src={screenWidth < 768
                     ? item.categoryImage.mobile.slice(1)

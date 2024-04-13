@@ -3,63 +3,63 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Manrope", sans-serif;
-  }
-  
-  
-  body {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    /* background-color: pink; */
+}
+
+body {
     width: 100%;
-  }
-  
-  
-  .header {
+}
+
+.header {
     width: 100%;
     min-height: 600px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(../public/assets/home/mobile/image-header.jpg);
-  }
-  
-  
-  
-  /* .pictures-3 {
-    display: grid;
-    grid-template-columns: 415px, 695px;
-    row-gap: 14px;
-  } */
-  
-  /* .third {
-    grid-row: span 2;
-  } */
-  
-  
-  @media screen and (width > 768px) {
+}
+
+.checkbox {
+    -webkit-appearance: none;
+}
+
+.checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    background: #d87d4a;
+}
+
+.checked {
+    border: 2px solid #d87d4a;
+}
+
+input[type='text']:focus {
+    border: 1px solid #d87d4a;
+    outline: none;
+    /* caret-color: #d87d4a; */
+}
+
+@media screen and (min-width: 768px) {
     .header {
-      background-image: url(../public/assets/home/tablet/image-header.jpg);
-      min-height: 729px;
+        background-image: url(../public/assets/home/tablet/image-header.jpg);
+        min-height: 729px;
     }
-  
+
     .HomeArticle {
-      background-image: url(../public/assets/medium.png);
-      /* background-image: url(../public/assets/small.png); */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  
+        background-image: url(../public/assets/medium.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-  }
-  
-  
-  
-  @media screen and (width > 1110px) {
+}
+
+@media screen and (min-width: 1111px) {
     .header {
-      background-image: url(../public/assets/home/desktop/image-hero.jpg);
+        background-image: url(../public/assets/home/desktop/image-hero.jpg);
     }
-  
-  
-  }
+}

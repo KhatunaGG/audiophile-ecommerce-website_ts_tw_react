@@ -9,6 +9,7 @@ import { createContext, useEffect, useState } from 'react';
 import productsdata from './data.json';
 import { CartItemType, GlobalStateType, IData } from './interfaces';
 import ProductDetail from './pages/ProductDetail';
+import Checkout from './pages/Checkout';
 
 
 export const GlobalState = createContext<GlobalStateType | null>(null);
@@ -72,6 +73,8 @@ function App() {
           <Route index element={<Earphones />} />
           <Route path='/earphones/:productdetail' element={<ProductDetail />} />
         </Route>
+
+        <Route path={'checkout'} element={<Checkout />} />
       </Route>
     )
   );

@@ -1,5 +1,3 @@
-// import { HomePropsType } from "../pages/Home";
-
 import { useContext } from "react";
 import { GlobalState } from "../App";
 
@@ -48,7 +46,6 @@ const HomeArticle = () => {
                 <div className="flex flex-col gap-8 items-start justify-center text-[black]">
                     <h2 className="font-bold text-[28px] tracking-[2px] uppercase text-[black]">zx7 speaker</h2>
                     <button className="border border-[black] bg-transparent uppercase font-bold text-[13px] tracking-[1px] py-[15px] px-[30px] hover:bg-[black] hover:text-[white]">See Product</button>
-
                 </div>
             </div>
             <div className="flex flex-col gap-6 md:flex-row md:gap-[11px] lg:gap-[30px] text-[black]">
@@ -63,7 +60,6 @@ const HomeArticle = () => {
                         backgroundPosition: 'center'
                     }}
                 >
-
                 </div>
 
                 <div className="rounded-[8px] bg-[#F1F1F1]  py-[41px] pl-6 md:flex-1 md:pl-[42px] md:pt-[95px] ">

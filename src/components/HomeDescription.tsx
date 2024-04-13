@@ -1,5 +1,4 @@
 import { useContext } from "react";
-// import { HomePropsType } from "../pages/Home";
 import { GlobalState } from "../App";
 
 const HomeDescription = () => {
