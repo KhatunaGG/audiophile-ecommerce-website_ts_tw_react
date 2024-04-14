@@ -5,8 +5,8 @@ import { GlobalState } from "../App";
 
 
 
-const SummaryCart = ({ summeryCartItem, noErrors, isChecked }: SummaryCartPropsType) => {
-
+const SummaryCart = ({ summeryCartItem, noErrors}: SummaryCartPropsType) => {
+    console.log(noErrors)
     const context = useContext(GlobalState);
     if (!context) return null;
     const { setCartItems, setCart } = context;
@@ -76,18 +76,34 @@ const SummaryCart = ({ summeryCartItem, noErrors, isChecked }: SummaryCartPropsT
             </div>
 
             <button
+                // onClick={() => {
+                //     if (noErrors) {
+                //         setEnd(!end)
+                //     }
+                //     setCartItems([])
+                //     setCart(false)
+                // }}
+
+
                 onClick={() => {
-                    if (noErrors) {
-                        setEnd(!end)
+
+                    setEnd(!end)
+
+                    if (!end) {
+                        setCartItems([])
+                        setCart(false)
                     }
-                    setCartItems([])
-                    setCart(false)
+
                 }}
-                className='w-full bg-[#D87D4A] text-white py-[15px] font-bold text-[13px] tracking-[1px] hover:bg-[#fbaf85]' type='submit' >CONTINUE & PAY</button>
-            {!end && (
+                className='w-full bg-[#D87D4A] text-white py-[15px] font-bold text-[13px] tracking-[1px] hover:bg-[#fbaf85]'
+                type='submit' 
+                >CONTINUE & PAY</button>
+            {noErrors && (
                 <ThanksSection summeryCartItem={summeryCartItem} />
             )}
-            
+
+          
+
 
         </>
     )

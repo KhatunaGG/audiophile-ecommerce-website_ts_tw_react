@@ -15,6 +15,10 @@ const Checkout = () => {
   const [checkBox, setCheckBox] = useState(1)
   const [isChecked, setIsChecked] = useState(false)
 
+
+
+
+  
   const context = useContext(GlobalState);
   if (!context) return null;
 
@@ -28,8 +32,12 @@ const Checkout = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<CheckoutDataType>({
     resolver: yupResolver(schema)
   })
+  
 
-  const noErrors = Object.keys(errors).length !== 0;
+  const noErrors = Object.keys(errors).length === 0;
+  console.log(noErrors)
+  // const hasErrors = Object.keys(errors).length !== 0;
+
   
 
   return (
