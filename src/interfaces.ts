@@ -159,7 +159,6 @@ export type CheckoutDataType = {
     name: string;
     phone: string;
     zip: string;
-
 }
 
 
@@ -170,6 +169,8 @@ export type ThanksSectionPropsType = {
 
 export type SummaryCartPropsType = {
     summeryCartItem: CartItemType[];
-    noErrors: boolean;
+    // noErrors: boolean;
     isChecked: boolean;
+        isLogged:  boolean,
+    setIsLogged: (value: boolean) => void;
 } 

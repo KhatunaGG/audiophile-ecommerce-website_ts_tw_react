@@ -46,11 +46,6 @@ const CartItem = ({ cartitem }: ItemPropsType) => {
             <div className="count-block flex flex-row   bg-[#F1F1F1] text-left">
                 <span
                     onClick={decreaseCount}
-                    // onClick={() => {
-                    //     decreaseCount()
-                    //     cartItems.filter((el) => el.id === cartitem.id && cartitem.quantity === 0)
-                    
-                    // }}
                     className="font-bold text-[13px] px-[15px] py-[3px] tracking-[1px] text-black cursor-pointer ">-</span>
                 <span className="font-bold text-[13px] py-[3px]  tracking-[1px] text-black cursor-pointer ">{cartitem.quantity}</span>
                 <span
@@ -65,92 +60,3 @@ export default CartItem
 
 
 
-
-// import { useContext, useState } from "react";
-// import {  GlobalState } from "../App";
-// import { IData, ItemPropsType } from "../interfaces";
-
-
-
-// const CartItem = ({ cartitem }: ItemPropsType) => {
-//     console.log(cartitem, '>>>>cartitem')
-//     const context = useContext(GlobalState);
-//     if (!context) return null;
-//     const { cartItems, setCartItems } = context;
-
-//     const [count, setCount] = useState(cartitem.quantity)
-
-
-//     const increaseCount = () => {
-//         setCount((prev) => prev + 1)
-//         cartToUpdate(count + 1)
-//     }
-
-//     const decreaseCount = () => {
-//         if (count > 0) {
-//             setCount((prev) => prev - 1)
-//             cartToUpdate(count - 1)
-//         } 
-//     }
-
-//     // const cartToUpdate = (updatedCount: number) => {
-//     //     const newCartItem = cartItems.map((item) => {
-//     //         if (item.id === cartitem.id) {
-//     //             return {
-//     //                 ...item, quantity: updatedCount, totalPrice: updatedCount * cartitem.price
-//     //             }
-//     //         }
-//     //         return item
-//     //     })
-//     //     setCartItems(newCartItem)
-//     // }
-
-//     const cartToUpdate = (updatedCount: number) => {
-//         // setCartItems(cartItems.filter((item) => item.id === cartitem.id && cartitem.quantity === 0))
-//         const newCartItem = cartItems.map((item) => {
-//             if (item.id === cartitem.id) {
-//                 return {
-//                     ...item, quantity: updatedCount, totalPrice: updatedCount * cartitem.price
-//                 }
-//             }
-//             return item
-//         })
-
-//         setCartItems(newCartItem)
-      
-//         setCartItems(newCartItem.filter((item: any) => item.id === cartitem.id && cartitem.quantity === 0))
-    
-        
-//     }
-
- 
-
-
-//     return (
-//         <div className='flex flex-row items-center justify-between gap-4 '>
-//             <img className='w-[64px] h-[64px] rounded-[8px]' src={cartitem.img.slice(1)} alt="" />
-//             <div className='text-[black] text-left  w-[62%]'>
-//                 <p className='text-[15px] leading-[1.66] font-bold text-[black]'>{cartitem.cartItemName}</p>
-//                 <p className='text-[15px] leading-[1.66] text-[#9b9393] font-medium'>$ {cartitem.totalPrice}</p>
-//             </div>
-//             <div className="count-block flex flex-row   bg-[#F1F1F1] text-left">
-//                 <span
-//                     // onClick={decreaseCount}
-//                     onClick={() => {
-//                         decreaseCount()
-//                         // if(cartitem.quantity === 0) {
-//                         //     newCartItem.filter((item: any) => item.id === cartitem.id && cartitem.quantity === 0)
-//                         // }
-
-//                     }}
-//                     className="font-bold text-[13px] px-[15px] py-[3px] tracking-[1px] text-black cursor-pointer ">-</span>
-//                 <span className="font-bold text-[13px] py-[3px]  tracking-[1px] text-black cursor-pointer ">{cartitem.quantity}</span>
-//                 <span
-//                     onClick={increaseCount}
-//                     className="font-bold text-[13px] px-[15px] py-[3px] tracking-[1px] text-black cursor-pointer ">+</span>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default CartItem

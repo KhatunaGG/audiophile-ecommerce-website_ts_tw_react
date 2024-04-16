@@ -10,18 +10,13 @@ import FeaturesSection from "../components/FeaturesSection";
 
 
 const ProductDetail = () => {
-
   const [count, setCount] = useState(0)
-
-
 
   const context = useContext(GlobalState);
   if (!context) return null;
   const { screenWidth, setCartItems, cartItems } = context;
 
-
   const location = useLocation()
-
 
 
   const navigate = useNavigate();
@@ -61,6 +56,8 @@ const ProductDetail = () => {
                     {item.new === true && 'NEW PRODUCT'}
 
                   </h3>
+                  {/* <h1 className='font-bold text-[28px] leading-[1] tracking-[1px] mb-6  md:leading-[1.14]  text-[black] lg:text-[40px] lg:tracking-[1.43px] lg:leading-[1.1] md:text-left'>
+                    {item.name}</h1> */}
                   <h1 className='font-bold text-[28px] leading-[1] tracking-[1px] mb-6  md:leading-[1.14]  text-[black] lg:text-[40px] lg:tracking-[1.43px] lg:leading-[1.1] md:text-left'>
                     {item.name}</h1>
 
@@ -98,7 +95,6 @@ const ProductDetail = () => {
                           setCartItems([...cartItems, cartItem])
                         }
                       }}
-
                       className="uppercase bg-[#D87D4A] hover:bg-[#fbaf85] px-[33px] py-[15px] text-white font-bold text-[13px] tracking-[1px">
                       ADD TO CART</button>
                   </div>
@@ -116,21 +112,17 @@ const ProductDetail = () => {
               </div>
               <img className="third  rounded-[8px] md:w-[57.24%]  " src={item.gallery.third.desktop.slice(1)} alt="" />
             </div>
-
             <LikeGallery
               others={item.others}
             />
           </div>
         ))}
-
         <div className="mb-[120px]">
           <MiniGallery />
         </div>
         <HomeDescription />
-
       </div>
     </>
-
   )
 }
 

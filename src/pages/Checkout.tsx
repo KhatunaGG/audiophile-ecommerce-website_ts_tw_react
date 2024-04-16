@@ -16,29 +16,27 @@ const Checkout = () => {
   const [isChecked, setIsChecked] = useState(false)
 
 
-
-
-  
   const context = useContext(GlobalState);
   if (!context) return null;
+
+  const [isLogged, setIsLogged] = useState(false)
 
 
   const navigate = useNavigate();
   const returnToHome = () => {
-    navigate('/')
+    navigate('checkout')
   }
 
 
   const { register, handleSubmit, formState: { errors } } = useForm<CheckoutDataType>({
     resolver: yupResolver(schema)
   })
-  
 
-  const noErrors = Object.keys(errors).length === 0;
-  console.log(noErrors)
-  // const hasErrors = Object.keys(errors).length !== 0;
 
-  
+  // const noErrors = Object.keys(errors).length === 0;
+  // console.log(noErrors)
+
+
 
   return (
     <>
@@ -201,7 +199,9 @@ const Checkout = () => {
             </div>
             <div className='summery w-full flex flex-col gap-8 items-start rounded-[8px] px-6 py-8 bg-white md:px-[27px] lg:px-[48px] lg:w-[31.53%] lg:max-w-[612px] lg:justify-between'>
               <h3 className='font-bold text-[18px] tracking-[1.29px] text-black uppercase'>summary</h3>
-              <SummaryCart summeryCartItem={location.state[0]} noErrors={noErrors} isChecked={isChecked} />
+              <SummaryCart summeryCartItem={location.state[0]} isChecked={isChecked}
+                setIsLogged={setIsLogged} isLogged={isLogged}
+              />
             </div>
           </form>
         </div>

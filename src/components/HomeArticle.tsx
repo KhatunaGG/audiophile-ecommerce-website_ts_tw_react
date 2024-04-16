@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { GlobalState } from "../App";
 
 
+
+
+
 const HomeArticle = () => {
 
     const context = useContext(GlobalState);
@@ -11,7 +14,9 @@ const HomeArticle = () => {
 
 
     return (
-        <section className="w-full flex flex-col gap-6">
+        <section className="w-full flex flex-col gap-6 mt-[30px] md:mt-0">
+
+            
             <div className='HomeArticle relative w-full h-[600px] bg-[#D87D4A] rounded-[8px] md:h-[720px] lg:h-[560px] overflow-hidden '
                 style={{
                     backgroundImage: screenWidth > 768 ? `url('/assets/medium.png')`
@@ -32,6 +37,9 @@ const HomeArticle = () => {
                 </div>
             </div>
 
+
+
+
             <div className="homeSection2-box-2 rounded-[8px] h-[320px] w-full pt-[89px] p-6 md:pl-[62px] lg:pl-[92px]"
                 style={{
                     backgroundImage:
@@ -43,12 +51,22 @@ const HomeArticle = () => {
                     backgroundPosition: 'center'
                 }}
             >
-                <div className="flex flex-col gap-8 items-start justify-center text-[black]">
+                <div
+                    className="flex flex-col gap-8 items-start justify-center text-[black]">
                     <h2 className="font-bold text-[28px] tracking-[2px] uppercase text-[black]">zx7 speaker</h2>
                     <button className="border border-[black] bg-transparent uppercase font-bold text-[13px] tracking-[1px] py-[15px] px-[30px] hover:bg-[black] hover:text-[white]">See Product</button>
                 </div>
             </div>
-            <div className="flex flex-col gap-6 md:flex-row md:gap-[11px] lg:gap-[30px] text-[black]">
+
+
+
+
+
+            <div
+           
+                className="flex flex-col gap-6 md:flex-row md:gap-[11px] lg:gap-[30px] text-[black]">
+
+
                 <div className="w-full h-[200px] md:h-[320px] lg:h-[320px] rounded-[8px] md:flex-1"
                     style={{
                         backgroundImage:

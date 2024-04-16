@@ -1,7 +1,8 @@
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalState } from "../App";
-
+import { delay, motion } from 'framer-motion'
 
 
 const MiniGalery = () => {
@@ -10,17 +11,59 @@ const MiniGalery = () => {
     const { setSidebar, category, screenWidth } = context;
 
 
-    return (
-        <div className=" flex flex-col items-center justify-center gap-[68px] md:flex-row md:gap-[10px] ">
 
+
+
+
+    const variants = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 }
+
+    }
+
+    const itemVariant = {
+        initial: {
+            opacity: 0,
+            x: -1000,
+        },
+        animate: {
+            delay: 1,
+            opacity: 1,
+            x: 0,
+            transition: { duration: 1.5 }
+        }
+    }
+
+  
+
+
+
+
+
+
+    return (
+        <motion.div
+            variants={variants}
+            initial='initial'
+            whileInView='animate'
+            className=" flex flex-col items-center justify-center gap-[68px] md:flex-row md:gap-[10px] ">
             {category.map((item, i) => (
                 <Link to={`/${item}`} key={i}>
-                    <div
+
+                    <motion.div
+                        variants={itemVariant}
+                        // initial='initial'
+                        // whileInView='animate'
+
+
+
                         onClick={() => setSidebar ? setSidebar(false) : undefined}
                         className="item relative flex flex-col items-center justify-center bg-[#F1F1F1] px-[108px] pb-[22px] pt-[88px] rounded-lg md:px-[56px] lg:pb-[30px] lg:pt-[116px] lg:px-[108.5px]  ">
 
                         {screenWidth < 768 ? (
-                            <img className="absolute top-[-30px] legt-0 w-[93.92px] h-[100px] "
+                            <img
+
+                                className="absolute top-[-30px] legt-0 w-[93.92px] h-[100px] "
 
                                 src={item === 'headphones' ? "/assets/shared/desktop/image-category-thumbnail-headphones.png"
                                     : item === 'speakers' ? "/assets/shared/desktop/image-category-thumbnail-speakers.png"
@@ -28,7 +71,9 @@ const MiniGalery = () => {
                                 }
                                 alt="" />
                         ) : screenWidth < 1110 ? (
-                            <img className="absolute top-[-35px] legt-0 w-[93.92px] h-[100px] "
+                            <img
+
+                                className="absolute top-[-35px] legt-0 w-[93.92px] h-[100px] "
 
                                 src={item === 'headphones' ? "/assets/shared/desktop/image-category-thumbnail-headphones.png"
                                     : item === 'speakers' ? "/assets/shared/desktop/image-category-thumbnail-speakers.png"
@@ -37,7 +82,9 @@ const MiniGalery = () => {
                                 alt="" />
 
                         ) : (
-                            <img className="absolute top-[-39px] legt-0  lg:w-[155.95px] lg:h-[150px] lg:top-[-52px]"
+                            <img
+
+                                className="absolute top-[-39px] legt-0  lg:w-[155.95px] lg:h-[150px] lg:top-[-52px]"
 
                                 src={item === 'headphones' ? "/assets/shared/desktop/image-category-thumbnail-headphones.png"
                                     : item === 'speakers' ? "/assets/shared/desktop/image-category-thumbnail-speakers.png"
@@ -54,13 +101,23 @@ const MiniGalery = () => {
                             </button>
                         </div>
 
-                    </div>
+                    </motion.div>
+
+
+
+
+
+
+
+
+
                 </Link>
             ))}
-        </div>
+        </motion.div>
     )
 }
 
 export default MiniGalery
+
 
 

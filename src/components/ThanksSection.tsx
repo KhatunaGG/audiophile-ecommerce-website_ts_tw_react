@@ -38,7 +38,7 @@ const ThanksSection = ({ summeryCartItem }: ThanksSectionPropsType) => {
                             <div className='gray-block md:w-[55.40%] bg-[#F1F1F1] px-6 pt-6 pb-[18px]'>
                                 <div className='checkout-cart w-full pb-4'>
                                     {summeryCartItem.slice(0, arrLength).map((item) => (
-                                        <div className='cart w-full flex flex-row items-center justify-between gap-4' key={item.cartItemName}>
+                                        <div className='cart w-full flex flex-row items-center justify-between gap-4' key={item.id}>
                                             <div className='flex flex-row items-center gap-4'>
                                                 <img className='w-[64px] h-[64px] rounded-[8px]' src={item.img} alt="" />
                                                 <div>

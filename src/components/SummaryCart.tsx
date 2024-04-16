@@ -5,14 +5,17 @@ import { GlobalState } from "../App";
 
 
 
-const SummaryCart = ({ summeryCartItem, noErrors}: SummaryCartPropsType) => {
-    console.log(noErrors)
+
+const SummaryCart = ({ summeryCartItem, setIsLogged, isLogged }: SummaryCartPropsType) => {
+
     const context = useContext(GlobalState);
     if (!context) return null;
     const { setCartItems, setCart } = context;
 
     const [summeryTotal, setSummeryTotal] = useState<number>(0);
-    const [end, setEnd] = useState(false)
+
+
+
 
 
 
@@ -77,28 +80,24 @@ const SummaryCart = ({ summeryCartItem, noErrors}: SummaryCartPropsType) => {
 
             <button
                 // onClick={() => {
-                //     if (noErrors) {
+                //     if (!noErrors) {
                 //         setEnd(!end)
                 //     }
                 //     setCartItems([])
                 //     setCart(false)
                 // }}
 
-
                 onClick={() => {
+                    setIsLogged(!isLogged)
+                    setCartItems([])
+                    //     setCart(false)
 
-                    setEnd(!end)
+                }}  
 
-                    if (!end) {
-                        setCartItems([])
-                        setCart(false)
-                    }
-
-                }}
                 className='w-full bg-[#D87D4A] text-white py-[15px] font-bold text-[13px] tracking-[1px] hover:bg-[#fbaf85]'
                 type='submit' 
                 >CONTINUE & PAY</button>
-            {noErrors && (
+            {isLogged === true && (
                 <ThanksSection summeryCartItem={summeryCartItem} />
             )}
 

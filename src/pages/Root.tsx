@@ -2,16 +2,16 @@ import { Link, Outlet } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Overlay from '../components/Overlay';
 import Cart from '../components/Cart';
-import { GlobalState  } from '../App';
+import { GlobalState } from '../App';
 import { useContext } from 'react';
-
+import { motion } from 'framer-motion'
 
 
 const Root = () => {
 
     const context = useContext(GlobalState);
     if (!context) return null;
-    const { screenWidth, category, sidebar, setCart, cart, toggleSidebar } = context;
+    const { screenWidth, category, sidebar, setCart, cart, toggleSidebar, setSidebar, cartItems } = context;
 
 
     return (
@@ -20,12 +20,59 @@ const Root = () => {
                 className='nav w-full bg-[transparent] text-white '>
                 <div className="container px-[6.44%] md:px-[5.20%] lg:px-[11.45%] border-b border-[#302f2f] mx-auto  md:border-none ">
                     <div className='w-full md:border-b md:border-[#302f2f] flex flex-row items-center justify-between  lg:justify-between py-8 '>
-                        <div className='flex w-[73.61%] items-center justify-between md:justify-start  md:gap-[42px] lg:w-[143px] lg:h-[25px]'>
-                            <div
+                        <div className='flex w-[73.61%] md:w-[64%] items-center justify-between md:justify-start  md:gap-[42px] lg:w-[143px] lg:h-[25px]'>
+                            {/* <div
                                 onClick={() => toggleSidebar()}
                                 className='logo-box  lg:hidden '>
                                 <img className=' lg:hidden' src="/assets/shared/tablet/icon-hamburger.svg" alt="" />
+                            </div> */}
+
+
+
+                            <div className=' lg:hidden '>
+                                <motion.div
+                                    onClick={() => {
+                                        setSidebar(prev => !prev);
+                                        // toggleSidebar()
+                                    }}
+                                    animate={sidebar ? 'open' : 'closed'}
+                                    className="burger-container flex flex-col ">
+
+                                    <motion.div
+                                        variants={{
+                                            open: { rotate: '45deg', y: 5.8 },
+                                            closed: { rotate: '0deg', y: 0 },
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            ease: 'easeInOut'
+                                        }}
+                                        className='w-[20px] h-[3px] m-[1.5px] rounded-[2px] bg-[#ffffff]'>
+                                    </motion.div>
+
+                                    <motion.div
+                                        variants={{
+                                            closed: { opacity: 1 },
+                                            open: { opacity: 0 }
+                                        }}
+                                        className='w-[20px] h-[3px] m-[1.5px] rounded-[2px] bg-[#ffffff]'>
+                                    </motion.div>
+
+                                    <motion.div
+                                        variants={{
+                                            open: { rotate: '-45deg', y: -5.9 },
+                                            closed: { rotate: '0deg', y: 0 },
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            ease: 'easeInOut'
+                                        }}
+                                        className='w-[20px] h-[3px] m-[1.5px] rounded-[2px] bg-[#ffffff]'>
+                                    </motion.div>
+                                </motion.div>
                             </div>
+
+
                             <Link to={'/'}>
                                 <svg
                                     className="transition duration-300 ease-in-out transform hover:scale-110"
