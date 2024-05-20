@@ -5,21 +5,19 @@ import { LikeGalleryPropsType } from "../interfaces";
 
 
 const LikeGallery = ({ others }: LikeGalleryPropsType) => {
-
     const context = useContext(GlobalState);
     if (!context) return null;
     const { screenWidth } = context;
-   
+
 
 
     return (
         <div className="likeGallery flex flex-col items-center gap-10  lg:gap-[64px] ">
             <h2 className="uppercase font-bold text-[32px] leading-[1.12] tracking-[1.14px] text-center">you may also like</h2>
-
             <div className="flex flex-col md:flex-row gap-[30px]">
                 {others.map((el) => (
                     <div className="flex flex-col gap-8 lg:gap-10">
-                           <img
+                        <img
                             src={screenWidth < 768
                                 ? el.image.mobile.slice(1)
                                 : screenWidth < 1110 ? el.image.tablet.slice(1)
@@ -32,7 +30,6 @@ const LikeGallery = ({ others }: LikeGalleryPropsType) => {
                         </div>
                     </div>
                 ))}
-
             </div>
         </div>
     )

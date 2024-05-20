@@ -8,10 +8,9 @@ import { motion } from 'framer-motion'
 
 
 const Root = () => {
-
     const context = useContext(GlobalState);
     if (!context) return null;
-    const { screenWidth, category, sidebar, setCart, cart, toggleSidebar, setSidebar, cartItems } = context;
+    const { screenWidth, category, sidebar, setCart, cart, setSidebar } = context;
 
 
     return (
@@ -21,19 +20,10 @@ const Root = () => {
                 <div className="container px-[6.44%] md:px-[5.20%] lg:px-[11.45%] border-b border-[#302f2f] mx-auto  md:border-none ">
                     <div className='w-full md:border-b md:border-[#302f2f] flex flex-row items-center justify-between  lg:justify-between py-8 '>
                         <div className='flex w-[73.61%] md:w-[64%] items-center justify-between md:justify-start  md:gap-[42px] lg:w-[143px] lg:h-[25px]'>
-                            {/* <div
-                                onClick={() => toggleSidebar()}
-                                className='logo-box  lg:hidden '>
-                                <img className=' lg:hidden' src="/assets/shared/tablet/icon-hamburger.svg" alt="" />
-                            </div> */}
-
-
-
                             <div className=' lg:hidden '>
                                 <motion.div
                                     onClick={() => {
                                         setSidebar(prev => !prev);
-                                        // toggleSidebar()
                                     }}
                                     animate={sidebar ? 'open' : 'closed'}
                                     className="burger-container flex flex-col ">
@@ -119,10 +109,7 @@ const Root = () => {
                     <Cart />
                 )}
             </div>
-
-            {/* <section className='px-[6.44%] md:px-[5.20%] lg:px-[11.45%]'> */}
             <Outlet />
-            {/* </section> */}
             <Footer />
         </main>
     )

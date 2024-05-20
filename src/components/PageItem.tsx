@@ -6,7 +6,6 @@ import { GlobalState } from "../App";
 
 
 const PageItem = ({ filtredData, status }: PageItemPropsType) => {
-
     const context = useContext(GlobalState);
     if (!context) return null;
     const { screenWidth } = context;

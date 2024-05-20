@@ -13,7 +13,6 @@ const Earphones = () => {
   const context = useContext(GlobalState);
   if (!context) return null;
   const { data } = context;
-
   const earphonesData = data.filter((item) => item.category === 'earphones')
 
 

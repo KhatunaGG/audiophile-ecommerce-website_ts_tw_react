@@ -6,11 +6,9 @@ import MiniGallery from "../components/MiniGallery";
 
 
 const Speakers = () => {
-
   const context = useContext(GlobalState);
   if (!context) return null;
   const { data } = context;
-
   const speakersData = data.filter((item) => item.category === 'speakers')
 
 

@@ -1,14 +1,13 @@
 import MiniGallery from '../components/MiniGallery'
 import HomeArticle from '../components/HomeArticle'
-import HomeDescription from '../components/HomeDescription';
-import { useContext } from "react";
-import { GlobalState } from "../App";
-import { Link } from 'react-router-dom';
+import HomeDescription from '../components/HomeDescription'
+import { useContext } from "react"
+import { GlobalState } from "../App"
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 
 const Home = () => {
-
   const context = useContext(GlobalState);
   if (!context) return null;
 
@@ -19,7 +18,7 @@ const Home = () => {
   const newLetters = Array.from(letters);
 
   const letters2 = 'HeadphoneS'
-  const newLetters2 = Array.from(letters2 )
+  const newLetters2 = Array.from(letters2)
 
 
 
@@ -35,13 +34,11 @@ const Home = () => {
   const child = {
     visible: {
       opacity: 1,
-      // y: 0,
       x: 0,
       transition: { type: 'spring', damping: 12, stiffness: 100 }
     },
     hidden: {
       opacity: 0,
-      // y: -20,
       x: -20,
       transition: { type: 'spring', damping: 12, stiffness: 100 }
     }
@@ -71,8 +68,6 @@ const Home = () => {
                 variants={child}
                 key={i}>{word}</motion.span>
             ))}</motion.h3>
-          {/* <h1 className='font-bold text-4xl leading-[1.11] tracking-[1.29px] mb-6 md:text-[56px] md:leading-[1.03] md:tracking-[2px] uppercase'>XX99 Mark II HeadphoneS</h1> */}
-
 
           <motion.div
             variants={variants}
@@ -86,7 +81,6 @@ const Home = () => {
                 {letter === ' ' ? "\u00A0" : letter}
               </motion.span>
             ))}</motion.div>
-
 
           <motion.div
             variants={variants}

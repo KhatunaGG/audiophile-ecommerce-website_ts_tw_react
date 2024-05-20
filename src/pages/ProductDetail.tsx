@@ -11,7 +11,6 @@ import FeaturesSection from "../components/FeaturesSection";
 
 const ProductDetail = () => {
   const [count, setCount] = useState(0)
-
   const context = useContext(GlobalState);
   if (!context) return null;
   const { screenWidth, setCartItems, cartItems } = context;
@@ -37,8 +36,6 @@ const ProductDetail = () => {
         {location.state.map((item: IData) => (
           <div className="w-full flex flex-col items-center justify-center gap-[120px] text-[#1f1f1f] md:mb-[120px] lg:mb-[160px] ">
             <div className="pageItem w-full h-full flex flex-col gap-[52px]  md:flex-row  lg:flex-row lg:gap-[125px] lg:items-center">
-
-
               <div
                 className={'image w-full flex items-center justify-center flex-1'}>
                 <img
@@ -54,22 +51,14 @@ const ProductDetail = () => {
                 <div className='lg:w-[379px] text-center md:justify-start lg:text-left'>
                   <h3 className='font-normal text-[14px] leading-[1.19] tracking-[10px] text-[#D87D4A] mb-4'>
                     {item.new === true && 'NEW PRODUCT'}
-
                   </h3>
-                  {/* <h1 className='font-bold text-[28px] leading-[1] tracking-[1px] mb-6  md:leading-[1.14]  text-[black] lg:text-[40px] lg:tracking-[1.43px] lg:leading-[1.1] md:text-left'>
-                    {item.name}</h1> */}
                   <h1 className='font-bold text-[28px] leading-[1] tracking-[1px] mb-6  md:leading-[1.14]  text-[black] lg:text-[40px] lg:tracking-[1.43px] lg:leading-[1.1] md:text-left'>
                     {item.name}</h1>
-
                   <p className='font-normal text-[15px] leading-[1.66] text-[#918b8b] mb-[28px]  lg:px-0 md:text-left'>{item.description}</p>
                 </div>
-
                 <div className="counter flex flex-col md:gap-[31px] lg:gap-[47px]">
                   <div className="price font-bold text-[18px] tracking-[1.29px]">$ {item.price}</div>
-
-
                   <div className="flex flex-row items-center gap-4 md:w-full ">
-
                     <div className="count-block flex flex-row  gap-[35px]  py-[15px] px-[13px] bg-[#F1F1F1]">
                       <span
                         onClick={() => setCount(count === 0 ? count : count - 1)}

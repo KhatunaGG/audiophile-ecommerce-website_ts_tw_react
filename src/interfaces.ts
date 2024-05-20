@@ -89,6 +89,7 @@ export interface IData {
     ],
 }
 
+
 export type ItemPropsType = {
     cartitem: CartItemType;
 }
@@ -97,7 +98,6 @@ export type ItemPropsType = {
 export type PageItemPropsType = {
     filtredData: IData;
     status?: string;
-
 }
 
 
@@ -169,8 +169,9 @@ export type ThanksSectionPropsType = {
 
 export type SummaryCartPropsType = {
     summeryCartItem: CartItemType[];
-    // noErrors: boolean;
     isChecked: boolean;
-        isLogged:  boolean,
+    isLogged: boolean,
     setIsLogged: (value: boolean) => void;
-} 
+    registerData: boolean;
+}
+

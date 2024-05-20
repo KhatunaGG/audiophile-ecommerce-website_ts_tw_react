@@ -6,17 +6,12 @@ import { GlobalState } from "../App";
 
 
 
-const SummaryCart = ({ summeryCartItem, setIsLogged, isLogged }: SummaryCartPropsType) => {
-
+const SummaryCart = ({ summeryCartItem, setIsLogged, isLogged, registerData , isChecked}: SummaryCartPropsType) => {
     const context = useContext(GlobalState);
     if (!context) return null;
-    const { setCartItems, setCart } = context;
+    const { setCartItems } = context;
 
     const [summeryTotal, setSummeryTotal] = useState<number>(0);
-
-
-
-
 
 
 
@@ -24,15 +19,12 @@ const SummaryCart = ({ summeryCartItem, setIsLogged, isLogged }: SummaryCartProp
         let total = 0;
         let units = 0;
         let sum = 0;
-
         summeryCartItem.forEach((el) => {
             total += el.price * el.quantity;
             units += el.quantity;
         });
-
         sum = total;
         setSummeryTotal(sum)
-
     }, [summeryCartItem]);
 
     return (
@@ -92,18 +84,14 @@ const SummaryCart = ({ summeryCartItem, setIsLogged, isLogged }: SummaryCartProp
                     setCartItems([])
                     //     setCart(false)
 
-                }}  
+                }}
 
                 className='w-full bg-[#D87D4A] text-white py-[15px] font-bold text-[13px] tracking-[1px] hover:bg-[#fbaf85]'
-                type='submit' 
-                >CONTINUE & PAY</button>
-            {isLogged === true && (
+                type='submit'
+            >CONTINUE & PAY</button>
+            {registerData && isChecked && (
                 <ThanksSection summeryCartItem={summeryCartItem} />
             )}
-
-          
-
-
         </>
     )
 }

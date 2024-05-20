@@ -23,10 +23,6 @@ function App() {
   const [cartItems, setCartItems] = useState<CartItemType[]>([])
 
 
-
-
-
-
   const toggleSidebar = () => {
     setSidebar(!sidebar)
   }
