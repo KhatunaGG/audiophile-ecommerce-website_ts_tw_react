@@ -71,19 +71,9 @@ const SummaryCart = ({ summeryCartItem, setIsLogged, isLogged, registerData , is
             </div>
 
             <button
-                // onClick={() => {
-                //     if (!noErrors) {
-                //         setEnd(!end)
-                //     }
-                //     setCartItems([])
-                //     setCart(false)
-                // }}
-
                 onClick={() => {
                     setIsLogged(!isLogged)
                     setCartItems([])
-                    //     setCart(false)
-
                 }}
 
                 className='w-full bg-[#D87D4A] text-white py-[15px] font-bold text-[13px] tracking-[1px] hover:bg-[#fbaf85]'

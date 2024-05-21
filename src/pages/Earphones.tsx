@@ -7,8 +7,6 @@ import { IData } from "../interfaces";
 
 
 
-
-
 const Earphones = () => {
   const context = useContext(GlobalState);
   if (!context) return null;
